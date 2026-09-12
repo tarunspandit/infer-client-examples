@@ -13,9 +13,9 @@ This is a small client example repository published by Tarun Pandit from Infer's
 
 ## Choose an example
 
-- [JavaScript Responses client](responses.mjs): Node.js built-in fetch, no packages, one bounded request.
-- [Python Responses client](responses.py): one request, no third-party packages, explicit output cap, and no automatic retry.
-- [OpenCode configuration](opencode.json): both exact Low cost selectors with an environment-based API key.
+- [JavaScript setup and first request](#one-responses-request-with-javascript): Node.js built-in fetch, no packages, one bounded request. [View source](responses.mjs).
+- [Python setup and first request](#one-responses-request-with-python): one request, no third-party packages, explicit output cap, and no automatic retry. [View source](responses.py).
+- [OpenCode setup](#use-the-models-in-opencode): both exact Low cost selectors with an environment-based API key. [View configuration](opencode.json).
 
 The examples contain no API key. [Create your Infer account](https://infer.flow7.org/signup?utm_source=github&utm_medium=referral&utm_campaign=infer-organic-202609&utm_content=c01-github-client-examples), verify your email, add wallet credit, then create an Infer API key. Keep that key in your environment rather than saving it in a committed file. These examples can incur normal usage charges when you run them with a funded account.
 
