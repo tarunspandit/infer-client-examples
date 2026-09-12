@@ -1,0 +1,24 @@
+{
+  "$schema": "https://opencode.ai/config.json",
+  "model": "infer/gpt-6-astra:low-cost",
+  "provider": {
+    "infer": {
+      "npm": "@ai-sdk/openai",
+      "name": "Infer by Flow7",
+      "options": {
+        "baseURL": "https://infer.flow7.org/v1",
+        "apiKey": "{env:INFER_API_KEY}"
+      },
+      "models": {
+        "gpt-6-astra:low-cost": {
+          "id": "infer/gpt-6-astra:low-cost",
+          "name": "GPT-6 Astra · Low cost"
+        },
+        "gpt-5.6-sol:low-cost": {
+          "id": "infer/gpt-5.6-sol:low-cost",
+          "name": "GPT-5.6 Sol · Low cost"
+        }
+      }
+    }
+  }
+}
