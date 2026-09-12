@@ -13,10 +13,37 @@ This is a small client example repository published by Tarun Pandit from Infer's
 
 ## Choose an example
 
+- [JavaScript Responses client](responses.mjs): Node.js built-in fetch, no packages, one bounded request.
 - [Python Responses client](responses.py): one request, no third-party packages, explicit output cap, and no automatic retry.
 - [OpenCode configuration](opencode.json): both exact Low cost selectors with an environment-based API key.
 
-The examples contain no API key. [Create your Infer account](https://infer.flow7.org/signup?utm_source=github&utm_medium=referral&utm_campaign=infer-organic-202609&utm_content=c01-github-client-examples), verify your email, add wallet credit, then create an Infer API key. Keep that key in your environment rather than saving it in a committed file. Both examples can incur normal usage charges when you run them with a funded account.
+The examples contain no API key. [Create your Infer account](https://infer.flow7.org/signup?utm_source=github&utm_medium=referral&utm_campaign=infer-organic-202609&utm_content=c01-github-client-examples), verify your email, add wallet credit, then create an Infer API key. Keep that key in your environment rather than saving it in a committed file. These examples can incur normal usage charges when you run them with a funded account.
+
+## One Responses request with JavaScript
+
+Use Node.js 22 or newer. No package installation is needed. This example runs in a terminal or server process. Keep your Infer key out of browser bundles and public code.
+
+**[Create your Infer account for JavaScript](https://infer.flow7.org/signup?utm_source=github&utm_medium=referral&utm_campaign=infer-organic-202609&utm_content=c03-javascript-responses).** Verify your email, add wallet credit, and create an API key. Set a daily or monthly spending cap on that key, then supply it through the `INFER_API_KEY` environment variable.
+
+```bash
+node responses.mjs "In one sentence, explain what a software regression is."
+```
+
+To choose Sol:
+
+```bash
+INFER_MODEL=infer/gpt-5.6-sol:low-cost node responses.mjs "In one sentence, explain what a software regression is."
+```
+
+The example uses [Node.js fetch](https://nodejs.org/api/globals.html#fetch) to make one non-streaming Responses request with a 1,024-token output cap and a 90-second client timeout. The token cap is not a dollar budget. A timeout does not guarantee the service stopped work, so check Infer usage before retrying. The client never retries automatically and rejects HTTP redirects.
+
+Test it without a key or wallet charge:
+
+```bash
+node test_responses.mjs
+```
+
+Tests replace the HTTP transport. They cover the endpoint, both model selectors, output cap, missing inputs, incomplete output, HTTP errors, timeout, malformed JSON and secret-safe error messages. No live paid JavaScript request was made during validation.
 
 ## One Responses request with Python
 
